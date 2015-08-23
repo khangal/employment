@@ -14,11 +14,11 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employer_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
             
-            $table->foreign('employer_id')
-            ->references('id')->on('employers');
+            $table->foreign('user_id')
+            ->references('id')->on('users');
         });
     }
 
