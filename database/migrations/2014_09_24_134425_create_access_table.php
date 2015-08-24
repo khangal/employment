@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCvsTable extends Migration
+class CreateAccessTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,10 @@ class CreateCvsTable extends Migration
      */
     public function up()
     {
-        Schema::create('cvs', function (Blueprint $table) {
+        Schema::create('access', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->string('name');
             $table->timestamps();
-            
-            $table->foreign('user_id')
-            ->references('id')->on('users');
         });
     }
 
@@ -29,6 +26,6 @@ class CreateCvsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cvs');
+        Schema::drop('access');
     }
 }
