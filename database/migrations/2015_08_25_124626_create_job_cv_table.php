@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAppliesTable extends Migration
+class CreateJobCvTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateAppliesTable extends Migration
      */
     public function up()
     {
-        Schema::create('applies', function (Blueprint $table) {
+        Schema::create('job_cv', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cv_id')->unsigned();
             $table->integer('job_id')->unsigned();
@@ -31,6 +31,6 @@ class CreateAppliesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('applies');
+        Schema::drop('job_cv');
     }
 }
