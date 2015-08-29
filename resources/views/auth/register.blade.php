@@ -1,20 +1,19 @@
 <!-- resources/views/auth/register.blade.php -->
 
-<form method="POST" action="/auth/register">
-    {!! csrf_field() !!}
+@extends('layouts.master')
 
+@section('title', 'Бүртгүүлэх')
+
+@section('content')
+<form method="POST" action="/register">
+    {!! csrf_field() !!}
     <div>
-        First Name
-        <input type="text" name="firstname" value="{{ old('firstname') }}">
+        Email
+        <input type="email" name="email" value="{{ old('email') }}">
     </div>
     
     <div>
-        Last name
-        <input type="text" name="lastname" value="{{ old('lastname') }}">
-    </div>
-
-    <div>
-        Email
+        Re-enter email
         <input type="email" name="email" value="{{ old('email') }}">
     </div>
 
@@ -24,11 +23,7 @@
     </div>
 
     <div>
-        Confirm Password
-        <input type="password" name="password_confirmation">
-    </div>
-
-    <div>
         <button type="submit">Register</button>
     </div>
 </form>
+@endsection
