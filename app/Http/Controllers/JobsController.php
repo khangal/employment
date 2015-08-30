@@ -28,7 +28,9 @@ class JobsController extends Controller
      */
     public function create()
     {
-        return view('jobs.create');
+        $types = \App\Type::orderBy('name', 'asc')->get();
+        
+        return view('jobs.create', compact('types'));
     }
 
     /**

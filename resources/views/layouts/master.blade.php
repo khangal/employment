@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>@yield('title')</title>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
         <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/emp.css') }}" rel="stylesheet" type="text/css">
     </head>

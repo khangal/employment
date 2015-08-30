@@ -12,11 +12,10 @@
 */
 
 Route::get('/', 'JobsController@index');
+Route::get('/post-job', 'JobsController@create');
 Route::get('/jobs/{id}', 'JobsController@show');
 
 Route::get('/resumes', 'ResumesController@index');
-
-Route::get('/post-job', 'JobsController@create');
 
 Route::get('/profile', 'ProfileController@index');
 

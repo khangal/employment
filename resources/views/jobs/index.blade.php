@@ -6,9 +6,9 @@
 	<form method="GET" action="#boom">
 		<div class="row">
 			<div class="input-group">
-			<input type="text" class="form-control" placeholder="Ажлын нэр, компаны нэр гэх мэт ...">
+			<input type="text" class="form-control" placeholder="Ажлын нэр, компаны нэр ...">
 			<span class="input-group-btn">
-				<button class="btn btn-default" type="button">Хайх</button>
+				<button class="btn btn-default" type="submit">Хайх</button>
 			</span>
 			</div><!-- /input-group -->
 		</div>
@@ -20,7 +20,7 @@
 				<a href="{{ url('/jobs', $job->id) }}">{{ $job->title }}</a>
 			</h3>
 			<div>
-				Company : {{ $job->company }}
+				Компани : {{ $job->company }} , Төрөл: {{ $job->type->name }}
 			</div>
 		</div>
 	@endforeach
