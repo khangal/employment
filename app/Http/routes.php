@@ -15,7 +15,7 @@ Route::get('/', 'JobsController@index');
 
 Route::get('/resumes', 'ResumesController@index');
 
-Route::get('/post-job', 'NewJobController@index');
+Route::get('/post-job', 'JobsController@create');
 
 // Authentication routes...
 Route::get('login', 'Auth\AuthController@getLogin');

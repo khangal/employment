@@ -16,7 +16,7 @@ class ResumesController extends Controller
      */
     public function index()
     {
-        return view('resumes');
+        return view('resumes.index');
     }
 
     /**

@@ -18,7 +18,7 @@ class JobsController extends Controller
     {
         $jobs = \App\Job::all();
         
-        return view('home');
+        return view('jobs.index');
     }
 
     /**
@@ -28,7 +28,7 @@ class JobsController extends Controller
      */
     public function create()
     {
-        //
+        return view('jobs.create');
     }
 
     /**
