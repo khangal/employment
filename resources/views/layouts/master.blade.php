@@ -18,7 +18,7 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Ажил хайх</a></li>
+                    <li><a href="/">Ажил хайх</a></li>
                     <li><a href="/resumes">Resume хайх</a></li>
                     <li><a href="/post-job">Ажлын байр зарлах</a></li>
                 </ul>

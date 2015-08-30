@@ -11,17 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'JobsController@index');
 
-Route::get('/resumes', function () {
-    return view('resumes');
-});
+Route::get('/resumes', 'ResumesController@index');
 
-Route::get('/post-job', function () {
-    return view('home');
-});
+Route::get('/post-job', 'NewJobController@index');
 
 // Authentication routes...
 Route::get('login', 'Auth\AuthController@getLogin');
