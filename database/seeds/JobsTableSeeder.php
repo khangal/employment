@@ -12,9 +12,9 @@ class JobsTableSeeder extends Seeder
     public function run()
     {
         // clear table
-        \App\Jobs::truncate(); 
+        \App\Job::truncate(); 
         // add 1st row
-        \App\Jobs::create( [
+        \App\Job::create( [
             'posted_by' => 1,
             'company' => 'Google Inc',
             'title' => 'Front-end Developer',
@@ -23,7 +23,7 @@ class JobsTableSeeder extends Seeder
             'type_id' => 2
         ] );
         // add 2nd row
-        \App\Jobs::create( [
+        \App\Job::create( [
             'posted_by' => 2,
             'company' => 'Fender',
             'title' => 'Audio engineer',
