@@ -1,7 +1,7 @@
 <html>
     <head>
-        <title>App Name - @yield('title')</title>
-        <link href="/css/app.css" rel="stylesheet" type="text/css">
+        <title>@yield('title')</title>
+        <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/emp.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -18,15 +18,28 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Ажил хайх</a></li>
-                    <li><a href="/resumes">Resume хайх</a></li>
-                    <li><a href="/post-job">Ажлын байр зарлах</a></li>
+                    <li><a href="{{ url('/') }}">Ажил хайх</a></li>
+                    <li><a href="{{ url('/resumes') }}">Resume хайх</a></li>
+                    <li><a href="{{ url('/post-job') }}">Ажлын байр зарлах</a></li>
                 </ul>
+                
+                @if (Auth::check())
+                    <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->email }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url('profile') }}">Миний мэдээлэл</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ url('/logout') }}">Гарах</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                @else
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/register">Бүртгүүлэх</a></li>
-                    <li><a href="/login">Нэвтрэх</a></li>
-                    <!--<li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>-->
+                    <li><a href="{{ url('/register') }}">Бүртгүүлэх</a></li>
+                    <li><a href="{{ url('/login') }}">Нэвтрэх</a></li>
                 </ul>
+                @endif
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
@@ -35,5 +48,8 @@
         <div class="container">
             @yield('content')
         </div>
+        
+        <script src="js/jquery-2.1.4.min.js"></script>        
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Ажил хайх')
+@section('title', 'Resume хайх')
 
 @section('content')
 <h1>All resumes here</h1>
