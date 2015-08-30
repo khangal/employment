@@ -15,11 +15,21 @@ class JobsTableSeeder extends Seeder
         \App\Jobs::truncate(); 
         // add 1st row
         \App\Jobs::create( [
-            'name' => 'private'
+            'posted_by' => 1,
+            'company' => 'Google Inc',
+            'title' => 'Front-end Developer',
+            'description' => 'Required: Web design, Sass, AngularJS, Grunt & Bower',
+            'salary' => '30000000',
+            'type_id' => 2
         ] );
         // add 2nd row
         \App\Jobs::create( [
-            'name' => 'public'
+            'posted_by' => 2,
+            'company' => 'Fender',
+            'title' => 'Audio engineer',
+            'description' => 'Live mixing, recording, reproduction',
+            'salary' => '10000000',
+            'type_id' => 1
         ] );
     }
 }
