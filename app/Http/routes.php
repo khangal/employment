@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'JobsController@index');
+Route::get('/jobs/{id}', 'JobsController@show');
 
 Route::get('/resumes', 'ResumesController@index');
 

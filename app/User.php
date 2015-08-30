@@ -35,7 +35,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     
     public function access()
     {
-        return $this->belongTo('App\Access');
+        return $this->belongsTo('App\Access');
     }
     
     public function profile()

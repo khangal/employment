@@ -1,8 +1,8 @@
 <html>
     <head>
         <title>App Name - @yield('title')</title>
-        <link href="css/app.css" rel="stylesheet" type="text/css">
-        <link href="css/emp.css" rel="stylesheet" type="text/css">
+        <link href="/css/app.css" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/emp.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
         @section('navbar')

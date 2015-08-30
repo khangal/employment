@@ -18,7 +18,7 @@ class JobsController extends Controller
     {
         $jobs = \App\Job::all();
         
-        return view('jobs.index');
+        return view('jobs.index', compact('jobs'));
     }
 
     /**
@@ -50,7 +50,9 @@ class JobsController extends Controller
      */
     public function show($id)
     {
-        //
+        $job = \App\Job::findOrFail($id);
+        
+        return view('jobs.show', compact('job'));
     }
 
     /**
