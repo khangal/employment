@@ -17,12 +17,11 @@ class CreateProfilesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('headline');
-            $table->string('address');
-            $table->string('token')->index();
-            $table->integer('desired_salary')->unsigned();
-            $table->char('phone', 8);
-            $table->text('summary');
+            $table->string('headline')-nullable();
+            $table->string('address')-nullable();
+            $table->integer('desired_salary')->unsigned()-nullable();
+            $table->char('phone', 8)-nullable();
+            $table->text('summary')-nullable();
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users');

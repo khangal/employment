@@ -16,12 +16,12 @@ class CreateWorksTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('title');
-            $table->string('company');
-            $table->date('start');
-            $table->date('end');
-            $table->text('resp');
-            $table->text('acco');
-            $table->text('skillused');
+            $table->string('company')-nullable();
+            $table->date('start')-nullable();
+            $table->date('end')-nullable();
+            $table->text('resp')-nullable();
+            $table->text('acco')-nullable();
+            $table->text('skillused')-nullable();
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users');

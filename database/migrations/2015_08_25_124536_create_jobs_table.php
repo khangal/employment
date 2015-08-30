@@ -18,7 +18,7 @@ class CreateJobsTable extends Migration
             $table->string('company');
             $table->string('title');
             $table->text('description');
-            $table->integer('salary')->unsigned();
+            $table->integer('salary')->unsigned()-nullable();
             $table->integer('type_id')->unsigned();
             $table->timestamps();
             
