@@ -5,7 +5,7 @@
 @section('title', 'Бүртгүүлэх')
 
 @section('content')
-<div class="row">
+<!--<div class="row">
     <div class="col-md-4 col-md-offset-4">
         <form method="POST" action="/register">
             {!! csrf_field() !!}
@@ -21,5 +21,22 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Бүртгүүлэх</button>
         </form>
     </div>
-</div>
+</div>-->
+
+<form method="POST" action="/register">
+    {!! csrf_field() !!}
+    <div>
+        Email
+        <input type="email" name="email" value="{{ old('email') }}">
+    </div>
+
+    <div>
+        Password
+        <input type="password" name="password">
+    </div>
+    <div>
+        <button type="submit">Register</button>
+    </div>
+</form>
+
 @endsection

@@ -20,9 +20,8 @@ class ProfileController extends Controller
             $profile = $request->user()->profile;
             return view('profile.index', compact('profile'));
         }
-        else{
-            return view('auth.login');
-        }
+        
+        return redirect('/login');
     }
 
     /**

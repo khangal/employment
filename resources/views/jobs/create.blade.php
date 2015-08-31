@@ -4,7 +4,7 @@
 
 @section('content')
 
-	<form method="POST" action="url('')">
+	<form method="POST" action="{{ url('jobs') }}">
 		{!! csrf_field() !!}
 	
 		<legend>Шинэ ажлын байр зарлах</legend>

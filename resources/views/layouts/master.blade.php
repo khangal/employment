@@ -21,7 +21,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/') }}">Ажил хайх</a></li>
                     <li><a href="{{ url('/resumes') }}">Resume хайх</a></li>
+                    @if (Auth::check())
                     <li><a href="{{ url('/post-job') }}">Ажлын байр зарлах</a></li>
+                    @endif
                 </ul>
                 
                 @if (Auth::check())

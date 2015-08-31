@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -16,7 +17,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $jobs = \App\Job::all();
+        $jobs = \App\Job::orderBy('created_at', 'desc')->get();
         
         return view('jobs.index', compact('jobs'));
     }
@@ -27,10 +28,14 @@ class JobsController extends Controller
      * @return Response
      */
     public function create()
-    {
-        $types = \App\Type::orderBy('name', 'asc')->get();
+    {   
+        if (Auth::user()){
+            $types = \App\Type::orderBy('name', 'asc')->get();
         
-        return view('jobs.create', compact('types'));
+            return view('jobs.create', compact('types'));
+        }
+        
+        return redirect('login');
     }
 
     /**
@@ -41,7 +46,9 @@ class JobsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        
+        return $input;
     }
 
     /**
